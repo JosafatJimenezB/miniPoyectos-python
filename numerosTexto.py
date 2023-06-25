@@ -19,9 +19,22 @@ def numeroAPalabra(numero):
     en_palabras = '{}{}{}'.format(
         centenas[centena], decenas[decena], unidades[unidad]).strip()
 
-    return en_palabras
+    en_palabras = en_palabras.replace('dieciuno', 'once')
+    en_palabras = en_palabras.replace('diecidos', 'doce')
+    en_palabras = en_palabras.replace('diecitres', 'trece')
+    en_palabras = en_palabras.replace('diecicuatro', 'catorce')
+    en_palabras = en_palabras.replace('diecicinco', 'quince')
+
+    if en_palabras.endswith('dieci'):
+        en_palabras = en_palabras.replace('dieci', 'diez')
+    elif en_palabras.endswith('veinti'):
+        en_palabras = en_palabras.replace('veinti', 'veinte')
+    elif en_palabras.endswith(' y'):
+        en_palabras = en_palabras[:-2]
+
+    return en_palabras.capitalize()
 
 
-valor = 111
+valor = 670
 print('Numero ingresado: ', valor)
 print(numeroAPalabra(valor))
