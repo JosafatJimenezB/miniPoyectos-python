@@ -1,4 +1,8 @@
 def numeroAPalabra(numero):
+
+    if numero == 0:
+        return 'cero'
+
     en_palabras = ''
 
     unidades = ['', 'uno', 'dos', 'tres', 'cuatro',
@@ -31,6 +35,8 @@ def numeroAPalabra(numero):
         en_palabras = en_palabras.replace('veinti', 'veinte')
     elif en_palabras.endswith(' y'):
         en_palabras = en_palabras[:-2]
+    elif en_palabras.endswith('ciento'):
+        en_palabras = en_palabras.replace('ciento', 'cien')
 
     return en_palabras.capitalize()
 
