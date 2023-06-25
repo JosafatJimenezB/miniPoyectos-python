@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'https://midu.dev/'
+url = input('Ingrese la url del sitio: ')
 response = requests.get(url)
 
 if response.status_code == 200:
